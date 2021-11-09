@@ -1,0 +1,102 @@
+@import "vars";
+html {
+  font-size: 10px;
+}
+body {
+  font-size: 1.6rem;
+  color: #111;
+  font-family: "Poppins", "Noto Sans KR", sans-serif;
+  /*쓴 순서대로 적용이 됨. 영어가 중요하다면 우선 적용할 폰트 먼저.*/
+}
+a {
+  color: inherit; /*색상 부모로부터 강제 상속*/
+  text-decoration: none;
+}
+button {
+  background: none;
+  border: none;
+  outline: none;
+}
+#header {
+  position: fixed; /*자식 크기만큼만 줄어들음*/
+  width: 100%;
+  // top: 0;
+  // background-color: rgba(31, 31, 31, 0.8);
+  .container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    #logo {
+      a {
+        display: flex;
+        align-items: center;
+        height: 90px;
+      }
+    }
+    #gnb {
+      text-align: center;
+      color: #fff;
+      .list {
+        display: flex;
+        > li {
+          > a {
+            font-size: $medium-size;
+            font-weight: 530;
+            text-transform: capitalize;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90px;
+            padding: 0 50px;
+          }
+          .depth02 {
+            li {
+              a {
+                display: block;
+                padding: 10px 0;
+              }
+            }
+          }
+        }
+      }
+    }
+    .etc {
+      display: flex;
+      align-items: center;
+      height: 90px;
+      color: #fff;
+      .online {
+        padding: 18px 40px;
+        border: 2px solid #fff;
+        border-radius: 100px;
+        transition: all 0.5s ease;
+        &:hover {
+          background-color: $main-color;
+          border-color: $main-color;
+        }
+      }
+      .all {
+        width: 50px;
+        height: 50px;
+        position: relative;
+        span {
+          display: block;
+          width: 30px;
+          height: 2px;
+          background-color: #fff;
+          position: absolute;
+          left: 10px;
+          &:nth-child(1) {
+            top: 14px;
+          }
+          &:nth-child(2) {
+            top: 24px;
+          }
+          &:nth-child(3) {
+            top: 34px;
+          }
+        } //span
+      } //all
+    }
+  }
+}
