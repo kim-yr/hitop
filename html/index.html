@@ -4,11 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/layout.css" />
-    <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/reset.css" />
+    <title>HITOP</title>
 
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
     <link
       rel="shortcut"
       href="../images/layout/favicon.png"
@@ -20,7 +21,14 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
-    <script src="../js/first.js"></script>
+    <link rel="stylesheet" href="../css/layout.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/swiper-bundle.css" />
+
+    <script src="../js/swiper-bundle.min.js"></script>
+    <script src="../js/main.js" defer></script>
+    <!--defer: 일단 다 읽고 나중에 실행해라-->
   </head>
   <body>
     <div id="wrap">
@@ -84,7 +92,7 @@
           <!-- gnb end -->
           <div class="etc">
             <a href="" class="online btn">온라인 견적문의</a>
-            <button class="all">
+            <button class="all open">
               <span></span>
               <span></span>
               <span></span>
@@ -96,14 +104,36 @@
       <main id="main">
         <div class="container">
           <div id="mainVisual">
-            <ul>
-              <li class="visual01"></li>
-              <li class="visual02"></li>
-              <li class="visual03"></li>
+            <ul class="swiper-wrapper">
+              <!--슬라이드 하려면 부모엔 swiper-wrapper, 자식엔 swiper-slide class로 추가.-->
+              <!--넘어갈 때마다 글자 바뀌려면 li안에 아니면 밖에-->
+              <li class="visual01 swiper-slide"></li>
+              <li class="visual02 swiper-slide"></li>
+              <li class="visual03 swiper-slide"></li>
             </ul>
+            <div class="slogan">
+              <p class="main">High Tchnology TOP Peoples</p>
+              <p class="sub">
+                아름답고 쾌적한 거리, 안전하고 차별화 된 공간을 원하십니까?
+                <br />
+                최고의 기술을 가진 최상의 조직! 자연을 닮은 제품을 제공하는
+                하이탑입니다.
+              </p>
+            </div>
+            <button class="prev">
+              <span class="material-icons"> arrow_back_ios </span>
+              <!--class의 'outlined' 지워야지 나옴-->
+            </button>
+            <button class="next">
+              <span class="material-icons"> arrow_forward_ios </span>
+            </button>
           </div>
         </div>
       </main>
     </div>
   </body>
+
+  <script>
+    //all을 클릭하면 open이라는 클래스를 붙여라
+  </script>
 </html>

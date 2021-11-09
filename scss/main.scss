@@ -1,7 +1,9 @@
 @import "vars";
 
 #main {
+  overflow: hidden;
   #mainVisual {
+    position: relative;
     ul {
       li {
         height: 100vh;
@@ -17,6 +19,44 @@
         &.visual03 {
           background-image: url("../images/main/mainVisual03.jpg");
         }
+      }
+    }
+    .slogan {
+      z-index: 3;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #fff;
+      .main {
+        font-size: 3.6rem;
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+        font-weight: 600;
+        line-height: 2.3;
+      }
+      .sub {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+    } //slogan
+    button {
+      position: absolute;
+      top: 50%;
+      width: 100px;
+      height: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 5;
+      color: #fff;
+      cursor: pointer;
+      &.prev {
+        left: 0;
+      }
+      &.next {
+        right: 0;
       }
     }
   }
