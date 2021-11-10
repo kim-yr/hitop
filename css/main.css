@@ -80,7 +80,9 @@ id태그 안에 id태그를 쓰는 경우 class안의 id보다 우선순위 더 
 
 #main #mainContents #news .listBox .list { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
 
-#main #mainContents #news .listBox .list li { width: 390px; border: 1px solid #d9d9d9; }
+#main #mainContents #news .listBox .list li { width: 390px; border: 1px solid #d9d9d9; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; }
+
+#main #mainContents #news .listBox .list li:hover { -webkit-transform: translateY(-20px); transform: translateY(-20px); -webkit-box-shadow: 5px 5px 5px rgba(191, 12, 20, 0.3); box-shadow: 5px 5px 5px rgba(191, 12, 20, 0.3); }
 
 #main #mainContents #news .listBox .list li img { width: 100%; height: 350px; -o-object-fit: cover; object-fit: cover; }
 
@@ -89,6 +91,16 @@ id태그 안에 id태그를 쓰는 경우 class안의 id보다 우선순위 더 
 #main #mainContents #news .listBox .list li .textBox h3 { font-size: 2.4rem; margin-bottom: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
 #main #mainContents #news .listBox .list li .textBox .text { margin-bottom: 20px; /* line-height: 1.5; //3줄만 나오고 나머지 ... 되나요? 아니오. //display: -moz-box;//모질라 재단 //display: -ms-flexbox;//마이크로소프트 display: -webkit-box; //구글, 사파리 height: 4.5em; //3줄만 보일거면 줄간격의 3배 overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; text-overflow: ellipsis; */ line-height: 1.5; height: 4.5em; display: -webkit-box; overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; text-overflow: ellipsis; }
+
+#main #mainContents #customer { background: url(../images/main/bgCustomer.jpg) no-repeat 50%; background-size: cover; color: #f0f0f0; }
+
+#main #mainContents #customer .titleBox h2:after { content: ""; display: block; position: relative; width: 20px; height: 2px; margin: 20px auto; background-color: #f0f0f0; }
+
+#main #mainContents #customer .titleBox p { line-height: 1.5; }
+
+#main #mainContents #customer .btns { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+#main #mainContents #customer .btns a { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 200px; height: 60px; color: #fff; background-color: #bf0c14; border-radius: 50px; text-shadow: 1px 1px 0px #8f090f,2px 2px 0px #8f090f,3px 3px 0px #8f090f,4px 4px 0px #8f090f,5px 5px 0px #8f090f,6px 6px 0px #8f090f,7px 7px 0px #8f090f,8px 8px 0px #8f090f,9px 9px 0px #8f090f,10px 10px 0px #8f090f,11px 11px 0px #8f090f,12px 12px 0px #8f090f,13px 13px 0px #8f090f,14px 14px 0px #8f090f,15px 15px 0px #8f090f,16px 16px 0px #8f090f,17px 17px 0px #8f090f,18px 18px 0px #8f090f,19px 19px 0px #8f090f,20px 20px 0px #8f090f,21px 21px 0px #8f090f,22px 22px 0px #8f090f,23px 23px 0px #8f090f,24px 24px 0px #8f090f,25px 25px 0px #8f090f,26px 26px 0px #8f090f,27px 27px 0px #8f090f,28px 28px 0px #8f090f,29px 29px 0px #8f090f,30px 30px 0px #8f090f,31px 31px 0px #8f090f,32px 32px 0px #8f090f,33px 33px 0px #8f090f,34px 34px 0px #8f090f,35px 35px 0px #8f090f,36px 36px 0px #8f090f,37px 37px 0px #8f090f,38px 38px 0px #8f090f,39px 39px 0px #8f090f,40px 40px 0px #8f090f;; overflow: hidden; }
 
 @-webkit-keyframes iconAni { 0% { -webkit-transform: translatey(0); transform: translatey(0); }
   100% { -webkit-transform: translateY(10px); transform: translateY(10px); } }

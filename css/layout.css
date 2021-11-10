@@ -22,7 +22,7 @@ button { background: none; border: none; outline: none; }
 
 #header .container #logo a { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 90px; }
 
-#header .container #gnb { text-align: center; color: #fff; }
+#header .container #gnb { text-align: center; color: #fdfdfd; }
 
 #header .container #gnb .list { display: -webkit-box; display: -ms-flexbox; display: flex; }
 
@@ -30,15 +30,15 @@ button { background: none; border: none; outline: none; }
 
 #header .container #gnb .list > li .depth02 li a { display: block; padding: 15px 0; }
 
-#header .container .etc { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 90px; color: #fff; }
+#header .container .etc { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 90px; color: #fdfdfd; }
 
-#header .container .etc .online { padding: 18px 40px; border: 2px solid #fff; border-radius: 100px; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; }
+#header .container .etc .online { padding: 18px 40px; border: 2px solid #fdfdfd; border-radius: 100px; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; }
 
 #header .container .etc .online:hover { background-color: #bf0c14; border-color: #bf0c14; }
 
 #header .container .etc .all { width: 60px; height: 50px; position: relative; }
 
-#header .container .etc .all span { display: block; width: 30px; height: 2px; background-color: #fff; position: absolute; left: 30px; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; }
+#header .container .etc .all span { display: block; width: 30px; height: 2px; background-color: #fdfdfd; position: absolute; left: 30px; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; }
 
 #header .container .etc .all span:nth-child(1) { top: 14px; }
 
@@ -51,3 +51,25 @@ button { background: none; border: none; outline: none; }
 #header .container .etc .all.open span:nth-child(2) { left: -100px; opacity: 0; }
 
 #header .container .etc .all.open span:nth-child(3) { -webkit-transform: rotate(45deg); transform: rotate(45deg); top: 24px; }
+
+#footer { background-color: #333; color: #fdfdfd; }
+
+#footer .utilMenu { border-bottom: 1px solid rgba(253, 253, 253, 0.5); }
+
+#footer .utilMenu .list { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+#footer .utilMenu .list li a { display: block; padding: 30px; position: relative; }
+
+#footer .utilMenu .list li a::before { content: ""; display: block; position: absolute; width: 1px; height: 10px; background-color: #fdfdfd; left: 0; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
+
+#footer .utilMenu .list li:nth-child(1) a::before { display: none; }
+
+#footer .addressBox { width: 1200px; margin: auto; padding: 50px 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+#footer .addressBox .address { margin-left: 50px; line-height: 1.5; }
+
+#footer .addressBox .address .copyright { margin-top: 30px; }
+
+#footer .addressBox .tel { margin-left: auto; }
+
+#footer .addressBox .tel strong { display: block; font-size: 3.8rem; font-weight: 500; margin-top: 20px; }

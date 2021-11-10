@@ -215,6 +215,11 @@ id태그 안에 id태그를 쓰는 경우 class안의 id보다 우선순위 더 
           li {
             width: 390px;
             border: 1px solid $border-color;
+            transition: all 0.25s ease;
+            &:hover {
+              transform: translateY(-20px);
+              box-shadow: 5px 5px 5px rgba($main-color, 0.3);
+            }
             img {
               width: 100%;
               height: 350px;
@@ -254,6 +259,41 @@ id태그 안에 id태그를 쓰는 경우 class안의 id보다 우선순위 더 
         }
       }
     } //#news
+
+    #customer {
+      background: url(../images/main/bgCustomer.jpg) no-repeat 50%;
+      background-size: cover; //cover를 위에 쓰려면 50% 뒤에 "/ cover"라 써야 함
+      color: #f0f0f0;
+      .titleBox {
+        h2 {
+          &:after {
+            @include pseudo(block, relative);
+            @include box(20px, 2px);
+            margin: 20px auto;
+            background-color: #f0f0f0;
+          }
+        }
+        p {
+          line-height: 1.5;
+        }
+      }
+      .btns {
+        display: flex;
+        justify-content: center;
+        a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @include box(200px, 60px);
+          color: #fff;
+          background-color: $main-color;
+          border-radius: 50px;
+          // darken($main-color, 10) => 메인칼라보다 10% 어둡게 하겠다
+          @include longShadow(darken($main-color, 10), right, 40);
+          overflow: hidden;
+        }
+      }
+    }
   } //mainContents
 }
 

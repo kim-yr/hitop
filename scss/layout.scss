@@ -1,4 +1,5 @@
 @import "vars";
+@import "mixins";
 html {
   font-size: 10px;
 }
@@ -62,7 +63,7 @@ button {
     }
     #gnb {
       text-align: center;
-      color: #fff;
+      color: $white-color;
       .list {
         display: flex;
         > li {
@@ -92,10 +93,10 @@ button {
       display: flex;
       align-items: center;
       height: 90px;
-      color: #fff;
+      color: $white-color;
       .online {
         padding: 18px 40px;
-        border: 2px solid #fff;
+        border: 2px solid $white-color;
         border-radius: 100px;
         transition: all 0.25s ease;
         &:hover {
@@ -111,7 +112,7 @@ button {
           display: block;
           width: 30px;
           height: 2px;
-          background-color: #fff;
+          background-color: $white-color;
           position: absolute;
           left: 30px;
           transition: all 0.25s ease;
@@ -144,5 +145,63 @@ button {
         }
       } //all
     } //etc
+  }
+}
+//header end
+
+#footer {
+  background-color: $gray-color;
+  color: $white-color;
+  .utilMenu {
+    //built in function: darken(color, 10)
+    //transparentize($white-color, 0.5): 원래 주어진 칼라의 투명도를 낮춤
+    border-bottom: 1px solid transparentize($white-color, 0.5);
+    .list {
+      display: flex;
+      justify-content: center;
+      li {
+        a {
+          display: block;
+          padding: 30px;
+          position: relative;
+          &::before {
+            @include pseudo();
+            @include box(1px, 10px);
+            background-color: $white-color;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+        &:nth-child(1) a::before {
+          display: none;
+        }
+      }
+    }
+  } //utilMenu end
+  .addressBox {
+    width: 1200px;
+    margin: auto;
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+
+    .address {
+      margin-left: 50px;
+      line-height: 1.5;
+      .copyright {
+        margin-top: 30px;
+      }
+    }
+    .tel {
+      // align-self: flex-end;
+      margin-left: auto;
+      strong {
+        display: block;
+        font-size: 3.8rem;
+        font-weight: 500;
+        margin-top: 20px;
+      }
+    }
   }
 }
