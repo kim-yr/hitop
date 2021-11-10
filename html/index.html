@@ -21,9 +21,10 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <!--reset이 가장 위에 오는 게 좋음. 이거 적는 순서도 중요-->
+    <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/layout.css" />
     <link rel="stylesheet" href="../css/main.css" />
-    <link rel="stylesheet" href="../css/reset.css" />
     <link rel="stylesheet" href="../css/swiper-bundle.css" />
 
     <script src="../js/swiper-bundle.min.js"></script>
@@ -127,8 +128,185 @@
             <button class="next">
               <span class="material-icons"> arrow_forward_ios </span>
             </button>
+            <div class="iconScroll">
+              <span class="icon"></span>
+              <span class="text">scroll</span>
+            </div>
+            <!--iconScroll-->
           </div>
+          <!--mainVisual end-->
+          <div id="mainContents">
+            <article id="quickMenu" class="contentsBox">
+              <h2 class="hidden">quick menu</h2>
+              <ul class="list">
+                <li>
+                  <a href="|">
+                    <img src="../images/main/mainLink01.jpg" alt="이미지링크" />
+                    <div class="textBox">
+                      <p>최고의 기술, 최상의 조직</p>
+                      <h3>about<br />company</h3>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="|">
+                    <img src="../images/main/mainLink02.jpg" alt="이미지링크" />
+                    <div class="textBox">
+                      <p>하이탑이 꿈꾸는 세상</p>
+                      <h3>download<br />catalog</h3>
+                    </div>
+                  </a>
+                </li>
+                <li>
+                  <a href="|">
+                    <img src="../images/main/mainLink03.jpg" alt="이미지링크" />
+                    <div class="textBox">
+                      <p>변화를 주도하는 하이탑인</p>
+                      <h3>recruit<br />hitop people</h3>
+                    </div>
+                  </a>
+                </li>
+              </ul>
+            </article>
+            <!--quickMenu End-->
+
+            <!--article은 따로 독립 가능한 글, section은 면=article을 묶는 것-->
+            <!--class = 같은 종류, 중복 가능, 이거 많이 쓰는 게 좋음, 분류작업 잘 해놓으라는 뜻 / id = 같은 영역, 중복 X-->
+            <article id="business" class="contentsBox">
+              <div class="titleBox">
+                <h2>business</h2>
+                <p>
+                  하이탑이 디자인에서 설계, 시공까지 확실하게 책임지겠습니다.
+                </p>
+              </div>
+              <div class="listBox">
+                <ul class="list">
+                  <li>
+                    <a href="|">
+                      <img
+                        src="../images/main/businessField01.jpg"
+                        alt="비즈니스이미지01"
+                      />
+                    </a>
+                    <div class="textBox">
+                      <h3>경관용 포장재</h3>
+                      <p>
+                        아트크리트, 텍스크리트, 패턴크리트, 흙콘크리그, 실코드
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="|">
+                      <img
+                        src="../images/main/businessField02.jpg"
+                        alt="비즈니스이미지02"
+                      />
+                    </a>
+                    <div class="textBox">
+                      <h3>경관용 포장재</h3>
+                      <p>
+                        아트크리트, 텍스크리트, 패턴크리트, 흙콘크리그, 실코드
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="|">
+                      <img
+                        src="../images/main/businessField03.jpg"
+                        alt="비즈니스이미지03"
+                      />
+                    </a>
+                    <div class="textBox">
+                      <h3>경관용 포장재</h3>
+                      <p>
+                        아트크리트, 텍스크리트, 패턴크리트, 흙콘크리그, 실코드
+                      </p>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="|">
+                      <img
+                        src="../images/main/businessField04.jpg"
+                        alt="비즈니스이미지04"
+                      />
+                    </a>
+                    <div class="textBox">
+                      <h3>경관용 포장재</h3>
+                      <p>
+                        아트크리트, 텍스크리트, 패턴크리트, 흙콘크리그, 실코드
+                      </p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </article>
+            <!--business end-->
+
+            <article id="news" class="contentsBox">
+              <div class="titleBox">
+                <h2>hitop news</h2>
+                <p>
+                  도시경관사업의 시장을 선도하는 하이탑의다양한 소식을
+                  전해드립니다.
+                </p>
+              </div>
+              <div class="listBox">
+                <ul class="list">
+                  <li>
+                    <a href="#">
+                      <img src="../images/main/news01.jpg" alt="" />
+                    </a>
+                    <div class="textBox">
+                      <h3>무슨무슨머시기머시기머시기머 시 기공지</h3>
+                      <p class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Aliquid, odit! Repudiandae illo neque ab eveniet,
+                        recusandae quasi doloremque illum rerum, molestiae
+                        voluptates veritatis minus nobis quisquam quae fugiat ex
+                        iure!
+                      </p>
+                      <p class="date">2021-11-01</p>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="../images/main/news02.jpg" alt="" />
+                    </a>
+                    <div class="textBox">
+                      <h3>무슨무슨공지</h3>
+                      <p class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Aliquid, odit! Repudiandae illo neque ab eveniet,
+                        recusandae quasi doloremque illum rerum, molestiae
+                        voluptates veritatis minus nobis quisquam quae fugiat ex
+                        iure!
+                      </p>
+                      <p class="date">2021-11-05</p>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="../images/main/news03.jpg" alt="" />
+                    </a>
+                    <div class="textBox">
+                      <h3>무슨무슨공지</h3>
+                      <p class="text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Aliquid, odit! Repudiandae illo neque ab eveniet,
+                        recusandae quasi doloremque illum rerum, molestiae
+                        voluptates veritatis minus nobis quisquam quae fugiat ex
+                        iure!
+                      </p>
+                      <p class="date">2021-11-11</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+          <!--mainContents end-->
         </div>
+        <!--container end-->
       </main>
     </div>
   </body>

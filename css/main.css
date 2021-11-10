@@ -1,5 +1,13 @@
 @charset "UTF-8";
 /*_가 붙은 파일은 컴파일 하지 않음*/
+/*적용 우선순위: tag < class < id < html에 쓰는 style <<< !important
+id태그 안에 id태그를 쓰는 경우 class안의 id보다 우선순위 더 높음*/
+.titleBox { margin-bottom: 100px; text-align: center; }
+
+.titleBox h2 { font-size: 3.6rem; margin-bottom: 10px; font-weight: 600; text-transform: uppercase; }
+
+.contentsBox { padding: 100px 0; }
+
 #main { overflow: hidden; }
 
 #main #mainVisual { position: relative; }
@@ -14,7 +22,7 @@
 
 #main #mainVisual .slogan { z-index: 3; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); text-align: center; color: #fff; }
 
-#main #mainVisual .slogan .main { font-size: 3.6rem; text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); font-weight: 600; line-height: 2.3; }
+#main #mainVisual .slogan .main { font-size: 3.2rem; text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5); font-weight: 600; line-height: 2.3; }
 
 #main #mainVisual .slogan .sub { font-size: 1rem; line-height: 1.5; }
 
@@ -23,3 +31,67 @@
 #main #mainVisual button.prev { left: 0; }
 
 #main #mainVisual button.next { right: 0; }
+
+#main #mainVisual .iconScroll { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; position: absolute; width: 100%; bottom: 100px; z-index: 2; }
+
+#main #mainVisual .iconScroll .icon { display: -webkit-box; display: -ms-flexbox; display: flex; width: 20px; height: 40px; border: 2px solid #fff; border-radius: 100px; margin-bottom: 10px; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+#main #mainVisual .iconScroll .icon:before { content: ""; display: block; position: relative; width: 3px; height: 5px; background-color: #fff; border-radius: 100px; margin-top: 10px; -webkit-animation: iconAni 0.5s ease infinite alternate; animation: iconAni 0.5s ease infinite alternate; }
+
+#main #mainVisual .iconScroll .text { text-transform: uppercase; font-weight: 500; font-size: 1rem; color: #fff; }
+
+#main #mainContents #quickMenu { padding-top: 0; }
+
+#main #mainContents #quickMenu .list { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+#main #mainContents #quickMenu .list li { width: 400px; position: relative; overflow: hidden; }
+
+#main #mainContents #quickMenu .list li:hover::before { opacity: 1; }
+
+#main #mainContents #quickMenu .list li:hover img { -webkit-transform: scale(1.1); transform: scale(1.1); }
+
+#main #mainContents #quickMenu .list li::before { content: ""; display: block; position: absolute; border: 1px solid #fff; /* width: 80%; height: 80%; left: 10%; top: 10%; //가로, 세로 길이가 같지 않아서 일정한 크기로 띄어지지 않음*/ left: 20px; right: 20px; top: 20px; bottom: 20px; opacity: 0; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; z-index: 10000; }
+
+#main #mainContents #quickMenu .list li img { -webkit-transition: all 0.25s ease; transition: all 0.25s ease; }
+
+#main #mainContents #quickMenu .list li .textBox { position: absolute; bottom: 40px; left: 40px; color: #fff; }
+
+#main #mainContents #quickMenu .list li .textBox p { font-size: 1.1rem; }
+
+#main #mainContents #quickMenu .list li .textBox h3 { font-size: 2.4rem; font-weight: 600; text-transform: uppercase; margin-top: 15px; }
+
+#main #mainContents #business { background: url(../images/main/bgBusiness.jpg) no-repeat 50%; background-size: cover; }
+
+#main #mainContents #business .listBox { width: 1200px; margin: auto; }
+
+#main #mainContents #business .listBox .list { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+#main #mainContents #business .listBox .list li { width: 590px; position: relative; margin-bottom: 20px; overflow: hidden; }
+
+#main #mainContents #business .listBox .list li:hover img { -webkit-transform: scale(1.1); transform: scale(1.1); -webkit-filter: grayscale(0); filter: grayscale(0); }
+
+#main #mainContents #business .listBox .list li img { -webkit-filter: grayscale(50%); filter: grayscale(50%); -webkit-transition: all 0.25s ease; transition: all 0.25s ease; }
+
+#main #mainContents #business .listBox .list li .textBox { position: absolute; left: 40px; bottom: 40px; color: #fff; }
+
+#main #mainContents #business .listBox .list li .textBox h3 { font-size: 2.4rem; margin-bottom: 10px; font-weight: 500; }
+
+#main #mainContents #news .listBox { width: 1200px; margin: auto; }
+
+#main #mainContents #news .listBox .list { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
+
+#main #mainContents #news .listBox .list li { width: 390px; border: 1px solid #d9d9d9; }
+
+#main #mainContents #news .listBox .list li img { width: 100%; height: 350px; -o-object-fit: cover; object-fit: cover; }
+
+#main #mainContents #news .listBox .list li .textBox { padding: 20px; color: #333; }
+
+#main #mainContents #news .listBox .list li .textBox h3 { font-size: 2.4rem; margin-bottom: 20px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+#main #mainContents #news .listBox .list li .textBox .text { margin-bottom: 20px; /* line-height: 1.5; //3줄만 나오고 나머지 ... 되나요? 아니오. //display: -moz-box;//모질라 재단 //display: -ms-flexbox;//마이크로소프트 display: -webkit-box; //구글, 사파리 height: 4.5em; //3줄만 보일거면 줄간격의 3배 overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; text-overflow: ellipsis; */ line-height: 1.5; height: 4.5em; display: -webkit-box; overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; text-overflow: ellipsis; }
+
+@-webkit-keyframes iconAni { 0% { -webkit-transform: translatey(0); transform: translatey(0); }
+  100% { -webkit-transform: translateY(10px); transform: translateY(10px); } }
+
+@keyframes iconAni { 0% { -webkit-transform: translatey(0); transform: translatey(0); }
+  100% { -webkit-transform: translateY(10px); transform: translateY(10px); } }

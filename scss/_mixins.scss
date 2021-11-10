@@ -1,0 +1,20 @@
+//()에 적는 값이 default값이 됨
+//usefull mixin 검색하면 쓸만한 거 검색됨
+@mixin multiEllipsis($line-height: 1.5, $line: 2) {
+  line-height: $line-height;
+  height: $line-height * $line * 1em; //높이 얼마로 지정할건지
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: $line; //몇줄 들어갈건지
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+@mixin pseudo($display: block, $position: absolute) {
+  content: "";
+  display: $display;
+  position: $position;
+}
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}

@@ -2,7 +2,7 @@
 const mainVisualSlider = new Swiper("#mainVisual", {
   autoplay: {
     delay: 2000, //머무르는 시간
-    disableOnInteraction: falgise,
+    disableOnInteraction: false,
   },
   speed: 1000, //넘어가는 시간
   effect: "fade",

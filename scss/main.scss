@@ -1,5 +1,20 @@
 @import "vars";
-
+@import "mixins";
+/*적용 우선순위: tag < class < id < html에 쓰는 style <<< !important
+id태그 안에 id태그를 쓰는 경우 class안의 id보다 우선순위 더 높음*/
+.titleBox {
+  margin-bottom: 100px;
+  text-align: center;
+  h2 {
+    font-size: $h2;
+    margin-bottom: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+}
+.contentsBox {
+  padding: 100px 0;
+}
 #main {
   overflow: hidden;
   #mainVisual {
@@ -30,7 +45,7 @@
       text-align: center;
       color: #fff;
       .main {
-        font-size: 3.6rem;
+        font-size: 3.2rem;
         text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
         font-weight: 600;
         line-height: 2.3;
@@ -58,6 +73,195 @@
       &.next {
         right: 0;
       }
+    } //button
+    .iconScroll {
+      display: flex;
+      flex-direction: column;
+      // justify-content: center; main axis에 정렬
+      align-items: center; // cross axis에 정렬
+      position: absolute;
+      width: 100%;
+      bottom: 100px;
+      z-index: 2;
+      .icon {
+        //인라인 요소
+        display: flex;
+        width: 20px;
+        height: 40px;
+        border: 2px solid #fff;
+        border-radius: 100px;
+        margin-bottom: 10px;
+        justify-content: center;
+        &:before {
+          @include pseudo(block, relative);
+          width: 3px;
+          height: 5px;
+          background-color: #fff;
+          border-radius: 100px;
+          margin-top: 10px;
+          animation: iconAni 0.5s ease infinite alternate;
+        }
+      }
+      .text {
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 1rem;
+        color: #fff;
+      }
     }
+  } //mainVisual end
+  #mainContents {
+    #quickMenu {
+      padding-top: 0;
+      .list {
+        display: flex;
+        justify-content: center;
+        li {
+          width: 400px;
+          position: relative;
+          overflow: hidden;
+          &:hover {
+            //자기 자신 가리킬 때는 항상 >>&<< 쓰기!
+            &::before {
+              opacity: 1;
+            }
+            img {
+              transform: scale(1.1);
+            }
+          }
+          &::before {
+            @include pseudo();
+            border: 1px solid #fff;
+            /*
+            width: 80%;
+            height: 80%;
+            left: 10%;
+            top: 10%;
+            //가로, 세로 길이가 같지 않아서 일정한 크기로 띄어지지 않음*/
+            left: 20px;
+            right: 20px;
+            top: 20px;
+            bottom: 20px;
+            opacity: 0;
+            transition: all 0.25s ease;
+            z-index: 10000;
+          }
+          img {
+            transition: all 0.25s ease;
+          }
+          .textBox {
+            position: absolute;
+            bottom: 40px;
+            left: 40px;
+            color: #fff;
+            p {
+              font-size: 1.1rem;
+            }
+            h3 {
+              font-size: $h3;
+              font-weight: 600;
+              text-transform: uppercase;
+              margin-top: 15px;
+            }
+          }
+        }
+      }
+    } //quickMenu end
+    #business {
+      background: url(../images/main/bgBusiness.jpg) no-repeat 50%;
+      background-size: cover;
+      .listBox {
+        width: 1200px;
+        margin: auto;
+        .list {
+          display: flex;
+          flex-wrap: wrap; //좌우 정렬 막으려면 이거 써야함. 왜??
+          justify-content: space-between;
+          li {
+            width: 590px;
+            position: relative;
+            margin-bottom: 20px;
+            overflow: hidden;
+            &:hover img {
+              transform: scale(1.1);
+              filter: grayscale(0);
+            }
+            img {
+              filter: grayscale(50%);
+              transition: all 0.25s ease;
+            }
+            .textBox {
+              position: absolute;
+              left: 40px;
+              bottom: 40px;
+              color: #fff;
+              h3 {
+                font-size: $h3;
+                margin-bottom: 10px;
+                font-weight: 500;
+              }
+            }
+          }
+        } //.list
+      } //.listBox
+    } //#business end
+    #news {
+      .listBox {
+        width: 1200px;
+        margin: auto;
+        .list {
+          display: flex;
+          justify-content: space-between;
+          li {
+            width: 390px;
+            border: 1px solid $border-color;
+            img {
+              width: 100%;
+              height: 350px;
+              object-fit: cover; //종횡비율을 맞춰줌, 이미지 잘리긴 함, 여백 없
+              //object-fit: contain; //이미지 안 잘리게 종횡비 맞춤, 여백 생김
+              //object-fit: none; //일단 가운데로 가서 같은 크기로 잘라옴, 여백은 없음
+            }
+            .textBox {
+              padding: 20px;
+              color: #333;
+              h3 {
+                font-size: $h3;
+                margin-bottom: 20px;
+                white-space: nowrap; //무조건 한줄로 출력
+                overflow: hidden; //넘치는 부분 안보이게
+                text-overflow: ellipsis; //잘리는 부분 ...으로 출력
+              }
+              .text {
+                margin-bottom: 20px;
+                /*
+                line-height: 1.5;
+                //3줄만 나오고 나머지 ... 되나요? 아니오.
+                //display: -moz-box;//모질라 재단
+                //display: -ms-flexbox;//마이크로소프트
+                display: -webkit-box; //구글, 사파리
+                height: 4.5em; //3줄만 보일거면 줄간격의 3배
+                overflow: hidden;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+                */ //_mixin.scss 만들어서 임포트 해도 됨
+                @include multiEllipsis(1.5, 3);
+                //css가보면 위에 하나하나 입력된 것처럼 적혀있음
+              }
+            }
+          }
+        }
+      }
+    } //#news
+  } //mainContents
+}
+
+@keyframes iconAni {
+  0% {
+    transform: translatey(0);
+  }
+  100% {
+    transform: translateY(10px);
   }
 }

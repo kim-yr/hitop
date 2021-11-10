@@ -6,9 +6,13 @@ body { font-size: 1.6rem; color: #111; font-family: "Poppins", "Noto Sans KR", s
 
 a { color: inherit; /*색상 부모로부터 강제 상속*/ text-decoration: none; }
 
+img { vertical-align: top; }
+
 button { background: none; border: none; outline: none; }
 
-#header { z-index: 99; position: fixed; /*자식 크기만큼만 줄어들음*/ width: 100%; height: 90px; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; }
+.hidden { display: none; }
+
+#header { z-index: 99; position: fixed; /*자식 크기만큼만 줄어들음*/ width: 100%; height: 90px; overflow: hidden; -webkit-transition: all 0.25s ease; transition: all 0.25s ease; background-color: rgba(51, 51, 51, 0.3); }
 
 #header.open { height: 335px; background-color: rgba(39, 39, 39, 0.8); }
 
@@ -22,19 +26,9 @@ button { background: none; border: none; outline: none; }
 
 #header .container #gnb .list { display: -webkit-box; display: -ms-flexbox; display: flex; }
 
-#header .container #gnb .list > li { position: relative; }
-
-#header .container #gnb .list > li > a { font-size: 22px; font-weight: 530; text-transform: capitalize; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 90px; padding: 0 50px; }
-
-#header .container #gnb .list > li .depth02 { position: absolute; left: 0; top: 90; z-index: 200; width: 100%; display: none; background-color: rgba(39, 39, 39, 0.8); }
+#header .container #gnb .list > li > a { font-size: 18px; font-weight: 530; text-transform: capitalize; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 90px; padding: 0 50px; }
 
 #header .container #gnb .list > li .depth02 li a { display: block; padding: 15px 0; }
-
-#header .container #gnb .list > li .depth02 li:hover { background-color: rgba(191, 12, 20, 0.7); }
-
-#header .container #gnb .list > li:hover { background-color: rgba(39, 39, 39, 0.8); }
-
-#header .container #gnb .list > li:hover .depth02 { display: block; }
 
 #header .container .etc { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 90px; color: #fff; }
 
